@@ -12,7 +12,7 @@ var plugins = [{
       options: {"plugins":[],"logo":"./static/favicon/favicon-512.png","injectHTML":true,"icons":{"android":true,"appleIcon":true,"appleStartup":true,"coast":false,"favicons":true,"firefox":true,"twitter":false,"yandex":false,"windows":false}},
     },{
       plugin: require('/home/marcos/Desktop/site/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
-      options: {"plugins":[],"name":"John Doe","short_name":"starter","start_url":"/","background_color":"#6b63ff","theme_color":"#6b63ff","display":"minimal-ui","icon":"./static/favicon/favicon-512.png"},
+      options: {"plugins":[],"name":"GD Tech","short_name":"starter","start_url":"/","background_color":"#6b63ff","theme_color":"#6b63ff","display":"minimal-ui","icon":"./static/favicon/favicon-512.png"},
     },{
       plugin: require('/home/marcos/Desktop/site/node_modules/gatsby-plugin-offline/gatsby-ssr'),
       options: {"plugins":[]},

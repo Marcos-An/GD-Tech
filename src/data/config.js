@@ -1,9 +1,9 @@
 module.exports = {
-  defaultTitle: 'John Doe',
+  defaultTitle: 'GD Tech',
   logo: 'https://portfolio.smakosh.com/favicon/favicon-512.png',
-  author: 'John Doe',
+  author: 'GD Tech',
   url: 'https://portfolio.smakosh.com',
-  legalName: 'John Doe',
+  legalName: 'GD Tech',
   defaultDescription: 'Nós estamos aqui para salvar o seu PC',
   socialLinks: {
     twitter: 'http://www.twitter.com/smakosh',
@@ -13,7 +13,6 @@ module.exports = {
     youtube: 'https://www.youtube.com/user/smakoshthegamer',
     google: 'https://plus.google.com/u/0/+IsmailSmakoshGhallou'
   },
-  googleAnalyticsID: 'UA-88875900-4',
   themeColor: '#6b63ff',
   backgroundColor: '#6b63ff',
   social: {

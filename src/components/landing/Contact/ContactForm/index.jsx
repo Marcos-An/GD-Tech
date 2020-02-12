@@ -1,18 +1,10 @@
 import React from 'react';
 import { Form, withFormik, FastField, ErrorMessage } from 'formik';
-import Recaptcha from 'react-google-recaptcha';
 import * as Yup from 'yup';
 import { Button, Input } from 'components/common';
-import { recaptcha_key } from 'data/config';
 import { Error, Center, InputField } from './styles';
 
-const ContactForm = ({
-  setFieldValue,
-  isSubmitting,
-  values,
-  errors,
-  touched
-}) => (
+const ContactForm = ({ isSubmitting, values, errors, touched }) => (
   <Form
     name="portfolio-dev"
     method="post"
@@ -47,6 +39,19 @@ const ContactForm = ({
     </InputField>
     <InputField>
       <Input
+        id="numero"
+        aria-label="numero"
+        component="input"
+        as={FastField}
+        type="numero"
+        name="numero"
+        placeholder="Número de telefone*"
+        error={touched.numero && errors.numero}
+      />
+      <ErrorMessage component={Error} name="email" />
+    </InputField>
+    <InputField>
+      <Input
         as={FastField}
         component="textarea"
         aria-label="message"
@@ -59,17 +64,6 @@ const ContactForm = ({
       />
       <ErrorMessage component={Error} name="message" />
     </InputField>
-    {values.name && values.email && values.message && (
-      <InputField>
-        <FastField
-          component={Recaptcha}
-          sitekey={recaptcha_key}
-          name="recaptcha"
-          onChange={value => setFieldValue('recaptcha', value)}
-        />
-        <ErrorMessage component={Error} name="recaptcha" />
-      </InputField>
-    )}
     {values.success && (
       <InputField>
         <Center>
@@ -79,7 +73,7 @@ const ContactForm = ({
     )}
     <Center>
       <Button secondary type="submit" disabled={isSubmitting}>
-        Submit
+        Enviar
       </Button>
     </Center>
   </Form>
@@ -89,6 +83,7 @@ export default withFormik({
   mapPropsToValues: () => ({
     name: '',
     email: '',
+    numero: '',
     message: '',
     recaptcha: '',
     success: false
@@ -99,10 +94,11 @@ export default withFormik({
       email: Yup.string()
         .email('Email inválido')
         .required('Campo do email é obrigatório'),
+      numero: Yup.string().required('Campo do numro é obrigatório'),
       message: Yup.string().required('Campo do problema é obrigatório')
     }),
   handleSubmit: async (
-    { name, email, message, recaptcha },
+    { name, email, numero, message, recaptcha },
     { setSubmitting, resetForm, setFieldValue }
   ) => {
     try {
@@ -120,8 +116,8 @@ export default withFormik({
           'form-name': 'portfolio-dev',
           name,
           email,
-          message,
-          'g-recaptcha-response': recaptcha
+          numero,
+          message
         })
       });
       await setSubmitting(false);
