@@ -13,7 +13,7 @@ export const Skills = () => (
       <Details>
         <p>
           Nós somos estudantes de Sistemas de informação na UFGD e estamos aqui
-          para te ajudar. Formatamos computados e instalamos qualquer programa
+          para te ajudar. Formatamos computadores e instalamos qualquer programa
           que você precise, com um{' '}
           <strong style={{ color: `#0468bf` }}>preço camarada</strong> pra você
           que é <strong style={{ color: `#0468bf` }}> universitário </strong>
