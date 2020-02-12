@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   padding: 4rem 0rem 0rem 0rem;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
 
   @media (max-width: 960px) {

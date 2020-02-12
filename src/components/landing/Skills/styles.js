@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
 export const SkillsWrapper = styled.div`
   padding: 4rem 0;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
 
   @media (max-width: 960px) {
