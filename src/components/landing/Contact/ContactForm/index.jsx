@@ -9,7 +9,6 @@ const ContactForm = ({ isSubmitting, values, errors, touched }) => (
     name="portfolio-dev"
     method="post"
     data-netlify="true"
-    data-netlify-recaptcha="true"
     data-netlify-honeypot="bot-field"
   >
     <InputField>
@@ -85,7 +84,6 @@ export default withFormik({
     email: '',
     numero: '',
     message: '',
-    recaptcha: '',
     success: false
   }),
   validationSchema: () =>
